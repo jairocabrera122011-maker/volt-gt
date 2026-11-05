@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Volt GT | El futuro se conduce</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #08080b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --purple: #a855f7;
+    --blue: #38bdf8;
+    --dark: #08080b;
+    --card: #15151c;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: rgba(10,10,15,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #292933;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--purple);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at center, #27103d, #08080b 70%);
+}
+
+.hero h1 {
+    font-size: clamp(40px, 8vw, 85px);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    animation: aparecer 1s ease;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero p {
+    color: #b8b8c5;
+    font-size: 19px;
+    max-width: 650px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background: var(--purple);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #7e22ce;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #a855f755;
+}
+
+section {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 45px);
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    color: #aaaab7;
+    max-width: 750px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 270px;
+    object-fit: contain;
+    background: #111117;
+    border: 1px solid #292933;
+    border-radius: 15px;
+    padding: 12px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.04);
+    border-color: var(--purple);
+}
+
+.specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.spec {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #292933;
+}
+
+.spec h3 {
+    font-size: 32px;
+    color: var(--purple);
+    margin-bottom: 10px;
+}
+
+.spec p {
+    color: #aaa;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--card);
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid #292933;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--purple);
+}
+
+.card h3 {
+    color: var(--purple);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.card p {
+    color: #b5b5c0;
+    line-height: 1.7;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.color {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: 0.3s;
+}
+
+.color:hover {
+    transform: scale(1.15);
+}
+
+.purple { background: #7925d8; }
+.black { background: #151515; }
+.blue { background: #1269bd; }
+.silver { background: #c5c5c5; }
+
+.pricing {
+    background: linear-gradient(180deg, #08080b, #1a0828, #08080b);
+}
+
+.price {
+    font-size: 48px;
+    color: white;
+    margin: 25px 0;
+}
+
+.price span {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.card ul {
+    text-align: left;
+    margin: 20px 0;
+    color: #ccc;
+    line-height: 2;
+    list-style: none;
+}
+
+.card ul li::before {
+    content: "✓ ";
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.faq {
+    max-width: 850px;
+    margin: auto;
+    text-align: left;
+}
+
+details {
+    background: var(--card);
+    border: 1px solid #292933;
+    padding: 22px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--purple);
+}
+
+details p {
+    color: #bbb;
+    margin-top: 15px;
+    line-height: 1.7;
+}
+
+.contact {
+    background: radial-gradient(circle, #241039, #08080b 70%);
+}
+
+footer {
+    background: #101015;
+    padding: 35px 8%;
+    text-align: center;
+    color: #888;
+    line-height: 2;
+    border-top: 1px solid #292933;
+}
+
+footer strong {
+    color: var(--purple);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .gallery img {
+        height: 220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">VOLT GT</div>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#diseno">Diseño</a>
+        <a href="#rendimiento">Rendimiento</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#precio">Precio</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+</header>
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+
+    <h1>EL FUTURO <span>SE CONDUCE.</span></h1>
+
+    <p>
+        Descubre el Volt GT. Un concepto de coche deportivo
+        futurista que combina innovación, tecnología y diseño.
+        Una nueva forma de imaginar la conducción.
+    </p>
+
+    <a href="#diseno" class="btn">DESCUBRIR EL VOLT GT →</a>
+
+</section>
+
+<!-- DISEÑO -->
+
+<section id="diseno">
+
+    <h2>DISEÑADO PARA IMPRESIONAR</h2>
+
+    <p class="subtitle">
+        Cada detalle del Volt GT está inspirado en el futuro.
+        Sus líneas deportivas y su diseño aerodinámico
+        crean una identidad única.
+    </p>
+
+    <div class="gallery">
+
+        <img src="coche-frontal-limpio.png"
+             alt="Vista frontal del Volt GT">
+
+        <img src="coche-superior-solo.png"
+             alt="Vista superior del Volt GT">
+
+        <img src="coche-lateral-solo.png"
+             alt="Vista lateral del Volt GT">
+
+    </div>
+
+</section>
+
+<!-- RENDIMIENTO -->
+
+<section id="rendimiento">
+
+    <h2>RENDIMIENTO Y POTENCIA</h2>
+
+    <p class="subtitle">
+        Especificaciones imaginadas para el concepto
+        deportivo Volt GT.
+    </p>
+
+    <div class="specs">
+
+        <div class="spec">
+            <h3>100%</h3>
+            <p>Motor eléctrico conceptual</p>
+        </div>
+
+        <div class="spec">
+            <h3>3,5 s</h3>
+            <p>Aceleración estimada de 0 a 100 km/h</p>
+        </div>
+
+        <div class="spec">
+            <h3>320 km/h</h3>
+            <p>Velocidad máxima conceptual</p>
+        </div>
+
+        <div class="spec">
+            <h3>600 km</h3>
+            <p>Autonomía estimada</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TECNOLOGIA -->
+
+<section id="tecnologia">
+
+    <h2>TECNOLOGÍA INTELIGENTE</h2>
+
+    <p class="subtitle">
+        El Volt GT combina conectividad y funciones
+        inteligentes para ofrecer una experiencia moderna.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Copiloto IA</h3>
+            <p>
+                Un asistente virtual que responde preguntas
+                y ayuda al conductor durante sus viajes.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Conectividad 5G</h3>
+            <p>
+                Bluetooth, Apple CarPlay, Android Auto
+                y conexión a internet.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Navegación inteligente</h3>
+            <p>
+                Planificación de rutas y recomendaciones
+                adaptadas al viaje.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Interior futurista</h3>
+            <p>
+                Pantalla digital, interfaz moderna
+                y controles intuitivos.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COLORES -->
+
+<section id="colores">
+
+    <h2>ELIGE TU ESTILO</h2>
+
+    <p class="subtitle">
+        Cuatro colores conceptuales para imaginar
+        tu Volt GT.
+    </p>
+
+    <div class="colors">
+
+        <div class="color purple" title="Morado eléctrico"></div>
+
+        <div class="color black" title="Negro oscuro"></div>
+
+        <div class="color blue" title="Azul futurista"></div>
+
+        <div class="color silver" title="Plata metalizado"></div>
+
+    </div>
+
+</section>
+
+<!-- PRECIOS -->
+
+<section class="pricing" id="precio">
+
+    <h2>ESCOGE TU EXPERIENCIA</h2>
+
+    <p class="subtitle">
+        Las funciones básicas son gratuitas.
+        Puedes añadir funciones inteligentes avanzadas
+        mediante una suscripción mensual.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>VOLT GT BASIC</h3>
+
+            <div class="price">0 €</div>
+
+            <ul>
+                <li>Funciones básicas</li>
+                <li>Conducción y controles</li>
+                <li>Conectividad estándar</li>
+                <li>Sin cuota mensual</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h3>VOLT GT PREMIUM IA</h3>
+
+            <div class="price">
+                19,99 € <span>/ mes</span>
+            </div>
+
+            <ul>
+                <li>Copiloto IA avanzado</li>
+                <li>Asistente por voz</li>
+                <li>Recomendaciones inteligentes</li>
+                <li>Navegación avanzada</li>
+                <li>Actualizaciones inteligentes</li>
+            </ul>
+
+            <a href="#contacto" class="btn">
+                MÁS INFORMACIÓN
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FAQ -->
+
+<section id="faq">
+
+    <h2>PREGUNTAS FRECUENTES</h2>
+
+    <div class="faq">
+
+        <details>
+            <summary>¿Qué es el Volt GT?</summary>
+            <p>
+                Es un concepto de coche deportivo futurista
+                diseñado como proyecto escolar.
+            </p>
+        </details>
+
+        <details>
+            <summary>¿Es eléctrico?</summary>
+            <p>
+                Sí. En nuestro concepto, el Volt GT utiliza
+                un sistema de propulsión eléctrica.
+            </p>
+        </details>
+
+        <details>
+            <summary>¿Hay que pagar para utilizarlo?</summary>
+            <p>
+                No. Las funciones básicas son gratuitas.
+                La suscripción Premium IA es opcional
+                y cuesta 19,99 € al mes.
+            </p>
+        </details>
+
+        <details>
+            <summary>¿El coche está disponible actualmente?</summary>
+            <p>
+                No. El Volt GT es un concepto ficticio
+                creado para un proyecto educativo.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+
+    <h2>EL FUTURO TE ESPERA</h2>
+
+    <p class="subtitle">
+        Volt GT. Innovación, tecnología y diseño
+        en una nueva visión del automóvil.
+    </p>
+
+    <a href="mailto:info@voltgt.example" class="btn">
+        CONTACTAR →
+    </a>
+
+</section>
+
+<footer>
+
+    <p><strong>VOLT GT</strong> | EL FUTURO SE CONDUCE.</p>
+
+    <p>© 2026 Volt GT</p>
+
+    <p>Proyecto escolar de diseño, innovación y marketing.</p>
+
+    <p>Concepto ficticio. Especificaciones no reales.</p>
+
+</footer>
+
+</body>
+</html>
