@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Volt GT | El futuro se conduce</title>
 
 <style>
@@ -12,15 +11,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: #080b12;
+    background: #080808;
     color: white;
 }
 
@@ -29,17 +25,13 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px 8%;
-    background: #080b12;
+    background: #101010;
 }
 
 .logo {
+    color: #a020f0;
     font-size: 30px;
     font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.logo span {
-    color: #00aaff;
 }
 
 nav a {
@@ -49,183 +41,123 @@ nav a {
 }
 
 nav a:hover {
-    color: #00aaff;
+    color: #a020f0;
 }
-
-/* PORTADA */
 
 .hero {
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    padding: 60px 10%;
-
-    background:
-    linear-gradient(90deg, #080b12 10%, transparent 100%),
-    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    max-width: 600px;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #12001c, #080808);
 }
 
 .hero h1 {
     font-size: 65px;
+    color: #c000ff;
     margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: #00aaff;
 }
 
 .hero p {
     font-size: 20px;
-    color: #d0d5df;
+    color: #ccc;
     margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
-    padding: 15px 30px;
-    background: #009dff;
+    padding: 14px 30px;
+    background: #a020f0;
     color: white;
     text-decoration: none;
+    border-radius: 8px;
     font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
 }
 
 .btn:hover {
-    background: #0074c7;
-    transform: translateY(-3px);
+    background: #7500b8;
 }
 
-/* SECCIONES */
-
 section {
-    padding: 90px 10%;
+    padding: 70px 8%;
+    text-align: center;
 }
 
 h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 38px;
+    color: #c000ff;
+    margin-bottom: 25px;
 }
 
-.subtitle {
-    color: #aab4c5;
-    max-width: 650px;
-    margin-bottom: 40px;
+.car-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.car-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: #151515;
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.car-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.description {
+    max-width: 800px;
+    margin: auto;
+    color: #ccc;
+    font-size: 18px;
     line-height: 1.7;
 }
 
-/* DISEÑO */
-
-.design {
-    background: #101722;
-}
-
-.design img {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-/* TECNOLOGÍA */
-
-.features {
+.cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
+    margin-top: 35px;
 }
 
-.feature {
-    background: #141e2c;
+.card {
+    background: #151515;
     padding: 30px;
-    border-radius: 10px;
-    border: 1px solid #26374c;
+    border-radius: 15px;
+    border: 1px solid #333;
 }
 
-.feature h3 {
-    color: #00aaff;
+.card h3 {
+    color: #c000ff;
     margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.feature p {
-    color: #c2cbd8;
-    line-height: 1.6;
-}
-
-/* SUSCRIPCIÓN */
-
-.price-section {
-    background: #101722;
-}
-
-.price-card {
-    background: #0a1422;
-    border: 2px solid #009dff;
-    border-radius: 12px;
-    padding: 40px;
-    max-width: 500px;
 }
 
 .price {
-    font-size: 45px;
-    color: #00aaff;
-    font-weight: bold;
+    font-size: 55px;
+    color: #c000ff;
     margin: 20px 0;
 }
 
 .price span {
     font-size: 18px;
-    color: white;
+    color: #aaa;
 }
 
-.price-card ul {
-    margin: 25px 0;
-    list-style: none;
+.subscription {
+    background: linear-gradient(135deg, #1c0029, #101010);
 }
-
-.price-card li {
-    margin: 12px 0;
-}
-
-.price-card li::before {
-    content: "✓ ";
-    color: #00aaff;
-}
-
-/* CONTACTO */
-
-.contact {
-    text-align: center;
-}
-
-.contact p {
-    margin: 20px auto 35px;
-    max-width: 600px;
-    color: #b8c2d1;
-    line-height: 1.7;
-}
-
-/* PIE */
 
 footer {
+    background: #101010;
     text-align: center;
     padding: 30px;
-    background: #05070b;
-    color: #8b97a9;
-    font-size: 14px;
+    color: #888;
 }
 
-/* MÓVILES */
-
-@media (max-width: 768px) {
-
+@media (max-width: 600px) {
     header {
         flex-direction: column;
         gap: 20px;
@@ -239,18 +171,6 @@ footer {
     .hero h1 {
         font-size: 42px;
     }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
 }
 </style>
 </head>
@@ -258,162 +178,92 @@ footer {
 <body>
 
 <header>
-
-    <div class="logo">VOLT<span>GT</span></div>
+    <div class="logo">VOLT GT</div>
 
     <nav>
+        <a href="#inicio">Inicio</a>
         <a href="#diseno">Diseño</a>
         <a href="#tecnologia">Tecnología</a>
-        <a href="#precio">Suscripción</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#precio">Precio</a>
     </nav>
-
 </header>
 
-<!-- PORTADA -->
-
-<div class="hero">
-
-    <div class="hero-content">
-
-        <h1>EL FUTURO<br>SE <span>CONDUCE.</span></h1>
-
-        <p>
-        Descubre el Volt GT. Un concepto de coche deportivo
-        que combina diseño, innovación y tecnología inteligente.
-        </p>
-
-        <a href="#diseno" class="btn">
-        DESCUBRE EL VOLT GT
-        </a>
-
-    </div>
-
-</div>
-
-<!-- DISEÑO -->
-
-<section class="design" id="diseno">
-
-    <h2>Diseñado para destacar.</h2>
-
-    <p class="subtitle">
-    Un estilo deportivo y futurista que combina líneas
-    aerodinámicas, elegancia y personalidad.
-    El Volt GT está pensado para quienes buscan algo diferente.
-    </p>
-
-    <img
-    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=85"
-    alt="Coche deportivo de diseño moderno">
-
+<section class="hero" id="inicio">
+    <h1>EL FUTURO SE CONDUCE.</h1>
+    <p>Descubre el nuevo Volt GT. Tecnología, potencia y diseño deportivo.</p>
+    <a href="#diseno" class="btn">DESCUBRIR EL VOLT GT</a>
 </section>
 
-<!-- TECNOLOGÍA -->
+<section id="diseno">
+    <h2>DISEÑADO PARA IMPRESIONAR</h2>
+
+    <p class="description">
+        El Volt GT es un coche deportivo futurista creado para combinar
+        velocidad, innovación y estilo. Su diseño aerodinámico y su estética
+        moderna representan una nueva generación de vehículos.
+    </p>
+
+    <div class="car-gallery">
+        <img src="coche-frontal-limpio.png" alt="Vista frontal del Volt GT">
+        <img src="coche-superior-solo.png" alt="Vista superior del Volt GT">
+        <img src="coche-lateral-solo.png" alt="Vista lateral del Volt GT">
+    </div>
+</section>
 
 <section id="tecnologia">
+    <h2>TECNOLOGÍA DEL FUTURO</h2>
 
-    <h2>La tecnología del futuro.</h2>
-
-    <p class="subtitle">
-    Conectividad y funciones inteligentes que transforman
-    la experiencia de conducción.
-    </p>
-
-    <div class="features">
-
-        <div class="feature">
-            <h3>Copiloto IA</h3>
-            <p>
-            Un asistente virtual inteligente con reconocimiento
-            de voz que te ayuda durante tus trayectos.
-            </p>
+    <div class="cards">
+        <div class="card">
+            <h3>Copiloto inteligente</h3>
+            <p>Un asistente de inteligencia artificial que ayuda al conductor.</p>
         </div>
 
-        <div class="feature">
-            <h3>Conectividad total</h3>
-            <p>
-            Bluetooth, conexión 5G, Apple CarPlay y
-            Android Auto para mantenerte conectado.
-            </p>
+        <div class="card">
+            <h3>Conectividad avanzada</h3>
+            <p>Bluetooth, conexión 5G, Apple CarPlay y Android Auto.</p>
         </div>
 
-        <div class="feature">
+        <div class="card">
             <h3>Navegación inteligente</h3>
-            <p>
-            Planificación de rutas y recomendaciones
-            personalizadas para tus viajes.
-            </p>
+            <p>Rutas optimizadas y recomendaciones durante el viaje.</p>
         </div>
-
     </div>
-
 </section>
 
-<!-- SUSCRIPCIÓN -->
+<section class="subscription" id="precio">
+    <h2>ELIGE TU EXPERIENCIA</h2>
 
-<section class="price-section" id="precio">
-
-    <h2>La inteligencia tiene un precio.</h2>
-
-    <p class="subtitle">
-    Las funciones básicas del vehículo son gratuitas.
-    Para disfrutar de las herramientas avanzadas de inteligencia
-    artificial, puedes activar una suscripción opcional.
-    </p>
-
-    <div class="price-card">
-
-        <h3>VOLT GT AI PREMIUM</h3>
-
-        <div class="price">
-        19,99 € <span>/ mes</span>
+    <div class="cards">
+        <div class="card">
+            <h3>Volt GT Basic</h3>
+            <div class="price">0 €</div>
+            <p>Funciones básicas del vehículo gratuitas.</p>
         </div>
 
-        <p>Incluye:</p>
-
-        <ul>
-            <li>Copiloto virtual con IA</li>
-            <li>Reconocimiento de voz avanzado</li>
-            <li>Navegación inteligente</li>
-            <li>Recomendaciones personalizadas</li>
-            <li>Actualizaciones de IA</li>
-        </ul>
-
-        <a href="#contacto" class="btn">
-        MÁS INFORMACIÓN
-        </a>
-
+        <div class="card">
+            <h3>Volt GT Premium IA</h3>
+            <div class="price">19,99 € <span>/ mes</span></div>
+            <p>Copiloto IA avanzado, funciones inteligentes,
+            recomendaciones personalizadas y actualizaciones.</p>
+            <br>
+            <a href="#contacto" class="btn">MÁS INFORMACIÓN</a>
+        </div>
     </div>
-
 </section>
 
-<!-- CONTACTO -->
-
-<section class="contact" id="contacto">
-
-    <h2>¿Preparado para el futuro?</h2>
-
-    <p>
-    Volt GT. Un nuevo concepto de movilidad deportiva
-    donde el diseño y la tecnología se unen.
-    Descubre nuestra visión del automóvil del mañana.
+<section id="contacto">
+    <h2>¿PREPARADO PARA EL FUTURO?</h2>
+    <p class="description">
+        Volt GT. La nueva forma de imaginar la conducción.
     </p>
-
-    <a href="mailto:info@voltgt.example" class="btn">
-    CONTACTAR
-    </a>
-
+    <br>
+    <a href="mailto:info@voltgt.example" class="btn">CONTACTAR</a>
 </section>
 
 <footer>
-
-    <div class="logo">VOLT<span>GT</span></div>
-
-    <p>© 2026 Volt GT · Proyecto escolar de marketing</p>
-
-    <p>Concepto ficticio de automóvil deportivo.</p>
-
+    <p>© 2026 Volt GT | Proyecto escolar de diseño y marketing</p>
+    <p>Concepto ficticio creado con fines educativos.</p>
 </footer>
 
 </body>
